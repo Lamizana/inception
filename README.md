@@ -92,3 +92,88 @@ prêtes à l'emploi, ainsi que d'utiliser des services tels que DockerHub.
 utilisée dans les scripts d'entrée.
 > 
 > Voici quelques correctifs interdits: tail -f, bash, sleep infinity, while true.
+
+> En savoir plus sur le PID 1 et les meilleures pratiques pour écrire des Dockerfiles.
+
+
+- Dans la base de données WordPress, il doit y avoir deux utilisateurs: l'un d'eux étant l'administrateur. Le nom d'utilisateur de l'administrateur ne peut pas contenir admin/Admin ou admin-
+istrateur/Administrateur (par exemple, admin, administrateur, Administrator, admin-123, etc...)
+
+> [!IMPORTANT]
+> Vos volumes seront disponibles dans le dossier /home/login/data de la machine hôte utilisant Docker.
+> Remplacer le login par le vôtre.
+
+- Configurer votre nom de domaine de manière à ce qu'il pointe vers votre adresse IP locale.
+- Ce nom de domaine doit être login.42.fr.
+- Là encore, utiliser son propre login.
+- Par exemple, si votre login est wil: wil.42.fr redirigera vers l'adresse IP pointant vers le site
+web de wil.
+
+> [!IMPORTANT]
+> La dernière balise est interdite.
+> 
+> Aucun mot de passe ne doit être présent dans vos Dockerfiles.
+> 
+> Il est obligatoire d'utiliser des variables d'environnement.
+> 
+> Il est également fortement recommandé d'utiliser un fichier .env pour stocker les variables d'environnement.
+> 
+> Le fichier .env doit être situé à la racine du répertoire srcs.
+> 
+> Votre conteneur NGINX doit être le seul point d'entrée dans votre infrastructure via le port 443
+> uniquement, en utilisant le protocole TLSv1.2 ou TLSv1.3.
+
+### Exemple de la structure de répertoire attendue :
+```bash
+$> ls -alR
+total XX
+drwxrwxr-x 3 wil wil 4096 avril 42 20:42 .
+drwxrwxrwt 17 wil wil 4096 avril 42 20:42 ..
+-rw-rw-r-- 1 wil wil XXXX avril 42 20:42 Makefile
+drwxrwxr-x 3 wil wil 4096 avril 42 20:42 srcs
+./srcs:
+total XX
+drwxrwxr-x 3 wil wil 4096 avril 42 20:42 .
+drwxrwxr-x 3 wil wil 4096 avril 42 20:42 ..
+-rw-rw-r-- 1 wil wil XXXX avril 42 20:42 docker-compose.yml
+-rw-rw-r-- 1 wil wil XXXX avril 42 20:42 .env
+drwxrwxr-x 5 wil wil 4096 avril 42 20:42 requirements
+./srcs/requirements:
+total XX
+drwxrwxr-x 5 wil wil 4096 avril 42 20:42 .
+drwxrwxr-x 3 wil wil 4096 avril 42 20:42 ..
+drwxrwxr-x 4 wil wil 4096 avril 42 20:42 bonus
+drwxrwxr-x 4 wil wil 4096 avril 42 20:42 mariadb
+drwxrwxr-x 4 wil wil 4096 avril 42 20:42 nginx
+drwxrwxr-x 4 wil wil 4096 avril 42 20:42 tools
+drwxrwxr-x 4 wil wil 4096 avril 42 20:42 wordpress
+./srcs/requirements/mariadb:
+total XX
+drwxrwxr-x 4 wil wil 4096 avril 42 20:45 .
+drwxrwxr-x 5 wil wil 4096 avril 42 20:42 ..
+drwxrwxr-x 2 wil wil 4096 avril 42 20:42 conf
+-rw-rw-r-- 1 wil wil XXXX avril 42 20:42 Dockerfile
+-rw-rw-r-- 1 wil wil XXXX avril 42 20:42 .dockerignore
+drwxrwxr-x 2 wil wil 4096 avril 42 20:42 tools
+[...]
+./srcs/requirements/nginx:
+total XX
+drwxrwxr-x 4 wil wil 4096 avril 42 20:42 .
+drwxrwxr-x 5 wil wil 4096 avril 42 20:42 ..
+drwxrwxr-x 2 wil wil 4096 avril 42 20:42 conf
+-rw-rw-r-- 1 wil wil XXXX avril 42 20:42 Dockerfile
+-rw-rw-r-- 1 wil wil XXXX avril 42 20:42 .dockerignore
+drwxrwxr-x 2 wil wil 4096 avril 42 20:42 tools
+[...]
+
+$> cat srcs/.env
+DOMAIN_NAME=wil.42.fr
+# certificates
+CERTS_=./XXXXXXXXXXXX
+# MYSQL SETUP
+MYSQL_ROOT_PASSWORD=XXXXXXXXXXXX
+MYSQL_USER=XXXXXXXXXXXX
+MYSQL_PASSWORD=XXXXXXXXXXXX
+[...]
+$>
+```
