@@ -1,6 +1,6 @@
 # **INCEPTION**
 - *Created by Lamizana in 01/02/20224*
-> [!IMPORTANT]
+> [!NOTE]
 > Virtualiser plusieurs images Docker en les créant dans une machine virtuelle personnelle.
 <details>
 <summary>Notions:</summary>
@@ -34,3 +34,27 @@ de Docker, ainsi que toute autre doc utile pour mener à bien ce travail.
 </details>
 
 # Partie obligatoire
+
+- Ce projet consiste à mettre en place une petite infrastructure composée de différents services
+selon des règles spécifiques.
+
+- L'ensemble du projet doit être réalisé dans une machine virtuelle. Utiliser:
+
+      - docker compose.
+
+- Chaque image Docker doit porter le même nom que le service correspondant.
+
+- Chaque service doit être exécuté dans un conteneur dédié.
+
+> [!IMPORTANT]
+> Pour des raisons de performance, les conteneurs doivent être construits à partir de
+> l'avant-dernière version stable d'Alpine ou de Debian.
+
+- Ecrire egalement les Dockerfiles, un par service. Les Dockerfiles doivent
+être appelés dans votre docker-compose.yml par votre Makefile.
+
+- Construire  les images Docker de votre projet. Il est alors interdit de tirer des images Docker
+prêtes à l'emploi, ainsi que d'utiliser des services tels que DockerHub.
+
+
+
