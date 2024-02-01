@@ -1,12 +1,20 @@
 # **INCEPTION**
+- *Created by Lamizana in 01/02/20224*
+> [!IMPORTANT]
+> Virtualiser plusieurs images Docker en les créant dans une machine virtuelle personnelle.
+<details>
+<summary>Notions:</summary>
+    
+    - Administration system.
+    - Docker.
+</details>
 
 # Introduction
 
 • Ce projet a pour but d'élargir les connaissances en matière d'administration système en utilisant Docker.
-• Virtualiser plusieurs images Docker, en les créant dans une nouvelle machine virtuelle
-personnelle.
 
-# Lignes directrices générales
+<details>
+<summary>régles générales:</summary>
 
 • Ce projet doit être réalisé sur une machine virtuelle.
 
@@ -14,10 +22,15 @@ personnelle.
 dans un dossier srcs.
 
 • Un Makefile est également nécessaire et doit être placé à la racine du répertoire,
-IL doit configurer l'ensemble de votre application (c'est-à-dire qu'il doit construire les 
-images Docker à l'aide de docker-compose.yml).
+IL doit configurer l'ensemble de l'application, uiliser:
+
+        - docker-compose.yml
+> Permet de construire les images Docker.
 
 • Ce sujet nécessite de mettre en pratique de nouveaux concepts de base.
 
 • Ne pas hésiter à lire beaucoup de documentation relative à l'utilisation 
 de Docker, ainsi que toute autre doc utile pour mener à bien ce travail.
+</details>
+
+# Partie obligatoire
