@@ -56,5 +56,39 @@ selon des règles spécifiques.
 - Construire  les images Docker de votre projet. Il est alors interdit de tirer des images Docker
 prêtes à l'emploi, ainsi que d'utiliser des services tels que DockerHub.
 
+- Installer ensuite:
 
+      - Un conteneur Docker qui contient NGINX avec TLSv1.2 ou TLSv1.3 uniquement.
+  
+      - Un conteneur Docker qui contient WordPress + php-fpm (il doit être installé et configuré)
+      mais sans nginx.
+  
+      - Un conteneur Docker qui contient uniquement MariaDB sans nginx.
+  
+      - Un volume qui contient la base de données WordPress.
+  
+      - Un deuxième volume qui contient les fichiers du site web WordPress.
+  
+      - Un réseau docker qui établit la connexion entre vos conteneurs.
+  
+> Vos conteneurs doivent redémarrer en cas de panne.
 
+> [!IMPORTANT]
+> Un conteneur Docker n'est pas une machine virtuelle!
+>
+> Il n'est donc pas recommandé d'utiliser un patch hacky basé sur 'tail -f' 
+> et ainsi de suite lorsqu'on essaie de l'exécuter.
+> 
+> Lire comment fonctionnent les démons et si c'est une bonne idée de les utiliser ou non.
+
+> [!CAUTION]
+> Bien entendu, l'utilisation de network : host ou --link ou links : est interdite.
+> 
+> La ligne network doit être présente dans votre fichier docker-compose.yml.
+> 
+> Vos conteneurs ne doivent pas être démarrés avec une commande exécutant une boucle infinie.
+> 
+>Ceci s'applique donc également à toute commande utilisée comme point d'entrée, ou
+utilisée dans les scripts d'entrée.
+> 
+> Voici quelques correctifs interdits: tail -f, bash, sleep infinity, while true.
