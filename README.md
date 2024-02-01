@@ -177,3 +177,31 @@ MYSQL_PASSWORD=XXXXXXXXXXXX
 [...]
 $>
 ```
+> [!CAUTION]
+>Pour des raisons de sécurité évidentes, toutes les informations d'identification, clés API, variables env
+etc... doivent être sauvegardées localement dans un fichier .env et ignorées par git.
+>
+> Les informations d'identification stockées publiquement vous conduiront directement à un échec du projet.
+
+# Partie Bonus
+
+- Un fichier Dockerfile doit être écrit pour chaque service supplémentaire.
+- Ainsi, chacun d'entre eux s'exécutera dans son propre conteneur et aura, si nécessaire, son volume dédié.
+- Liste de bonus :
+      
+      - Mettre en place un cache redis pour votre site WordPress afin de gérer correctement le cache.
+      - Mettre en place un serveur FTP pointant vers le volume de votre site WordPress.
+      - Créer un site web statique simple dans le langage de votre choix sauf PHP !.
+              - Par exemple, un site vitrine ou un site de présentation de votre CV.
+      -  Mettre en place Adminer.
+      - Mettre en place un service de votre choix que vous jugez utile. Lors de la soutenance, vous
+      devrez justifier votre choix.
+> [!NOTE]
+> Pour compléter la partie bonus,possibilité de mettre en place des services supplémentaires.
+> 
+> Dans ce cas, vous pouvez ouvrir plus de ports en fonction de vos besoins.
+
+> [!WARNING]
+> La partie bonus ne sera évaluée que si la partie obligatoire est PARFAITE. Parfait signifie que la partie obligatoire a été intégralement réalisée et qu'elle fonctionne sans dysfonctionnement.
+> 
+> Si vous n'avez pas satisfait à TOUTES les exigences obligatoires, votre partie bonus ne sera pas évaluée du tout.
