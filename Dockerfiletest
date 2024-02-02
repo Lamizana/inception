@@ -1,0 +1,25 @@
+# Permet de definir l'image source:
+FROM openclassrooms/build_image	
+
+# Permet d'executer des commandes dans notre conteneur:
+RUN apt-get update -yq \
+&& apt-get install nginx -y \
+&& apt-get clean -y
+
+# Permet d'ajouter des fichiers dans notre repertoire:
+ADD . /app/
+
+# Permmet de definir le repertoire de travail (equivalent a cd):
+WORKDIR /app
+
+# Permet d'installer le packet nodejs:
+RUN nginx install
+
+# Permet d'indoquer le port d'ecoute:
+EXPOSE 2368
+
+# Permet d'indiquer le repertoire a partage:
+VOLUME /app/logs
+
+# Permet a notre conteneur de savoir quel commande il doit executer au demarrage:
+CMD npm run start
