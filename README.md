@@ -177,6 +177,53 @@ MYSQL_PASSWORD=XXXXXXXXXXXX
 [...]
 $>
 ```
+
+### Commandes Docker:
+```bash
+$> docker run XXX
+```
+- Télécharge l'image si elle n`est pas présente et démarre le conteneur.
+```bash
+$> docker run hello-world
+```
+- Lance le conteneur hello-world.
+```bash
+$> docker run -d -p 8080:80 nginx 
+```
+- Lance un serveur Nginx.
+```bash
+$> docker ps
+```
+- liste les conteneurs demarrées.
+```bash
+$> docker ps -a
+```
+- Liste tout les conteneurs.
+```bash
+$> docker exec -ti ID_RETOURNÉ_LORS_DU_DOCKER_RUN
+```
+- Ouvre un shell pour acceder dans le conteneur.
+```bash
+$> docker stop ID_RETOURNÉ_LORS_DU_DOCKER_RUN
+```
+- Stoppe le conteneur mais reste sur le disque.
+```bash
+$> docker rm ID_RETOURNÉ_LORS_DU_DOCKER_RUN
+```
+- supprime le conteneur.
+```bash
+$> docker pull hello-world
+```
+- recupere l'image, la met sur le disque mais ne la lance pas.
+```bash
+$> docker images -a
+```
+- Voir l'ensemble des images présentes sur le disque.
+```bash
+$> docker rmi ID_RETOURNÉ_LORS_DU_DOCKER_RUN
+```
+- Supprime l'image du disque.
+
 > [!CAUTION]
 >Pour des raisons de sécurité évidentes, toutes les informations d'identification, clés API, variables env
 etc... doivent être sauvegardées localement dans un fichier .env et ignorées par git.
