@@ -216,6 +216,10 @@ $> docker pull hello-world
 ```
 - recupere l'image, la met sur le disque mais ne la lance pas.
 ```bash
+$> docker prune
+```
+- Supprime l'ensemble des ressources.
+```bash
 $> docker images -a
 ```
 - Voir l'ensemble des images présentes sur le disque.
@@ -223,7 +227,7 @@ $> docker images -a
 $> docker rmi ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
 - Supprime l'image du disque.
-
+  
 > [!CAUTION]
 >Pour des raisons de sécurité évidentes, toutes les informations d'identification, clés API, variables env
 etc... doivent être sauvegardées localement dans un fichier .env et ignorées par git.
