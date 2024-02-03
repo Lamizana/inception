@@ -181,95 +181,100 @@ $>
 ```
 </details>
 
+> [!CAUTION]
+>Pour des raisons de sécurité évidentes, toutes les informations d'identification, clés API, variables env
+etc... doivent être sauvegardées localement dans un fichier .env et ignorées par git.
+>
+> Les informations d'identification stockées publiquement vous conduiront directement à un échec du projet.
+
+# Notion et commandes:
+
 ### Commandes Docker:
 <details>
 
 ```bash
 $> docker run XXX
 ```
-- Télécharge l'image si elle n`est pas présente et démarre le conteneur.
+> Télécharge l'image si elle n`est pas présente et démarre le conteneur.
 ```bash
 $> docker run hello-world
 ```
-- Lance le conteneur hello-world.
+> Lance le conteneur hello-world.
 ```bash
 $> docker run -d -p 8080:80 nginx 
 ```
-- Lance un serveur Nginx.
+> Lance un serveur Nginx.
 ```bash
 $> docker ps
 ```
-- liste les conteneurs demarrées.
+> liste les conteneurs demarrées.
 ```bash
 $> docker ps -a
 ```
-- Liste tout les conteneurs.
+> Liste tout les conteneurs.
 ```bash
 $> docker exec -ti ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
-- Ouvre un shell pour acceder dans le conteneur.
+> Ouvre un shell pour acceder dans le conteneur.
 ```bash
 $> docker stop ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
-- Stoppe le conteneur mais reste sur le disque.
+> Stoppe le conteneur mais reste sur le disque.
 ```bash
 $> docker rm ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
-- supprime le conteneur.
+> supprime le conteneur.
 ```bash
 $> docker pull hello-world
 ```
-- recupere l'image, la met sur le disque mais ne la lance pas.
+> recupere l'image, la met sur le disque mais ne la lance pas.
 ```bash
 $> docker prune
 ```
-- Supprime l'ensemble des ressources.
+> Supprime l'ensemble des ressources.
 ```bash
 $> docker images -a
 ```
-- Voir l'ensemble des images présentes sur le disque.
+> Voir l'ensemble des images présentes sur le disque.
 ```bash
 $> docker rmi ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
-- Supprime l'image du disque.
+> Supprime l'image du disque.
     
 </details>
 
 ### Commandes Docker-compose:
 <details>
 
+- Une stack est un ensemble de conteneurs Docker lancés via un seul et unique fichier
+Docker Compose.
+
 ```bash
 $> docker-compose up -d
 ```
-- Démarre l'ensemble des contenaurs en arriere-plan.
+> Démarre l'ensemble des contenaurs en arriere-plan.
 ```bash
 $> docker-compose ps
 ```
-- Permet d'afficher le status de l'ensemble de notre stack.
+> Permet d'afficher le status de l'ensemble de notre stack.
 ```bash
 $> docker-compose logs -f --tail 5
 ```
-- Permet d'afficher les logs de notre stack.
+> Permet d'afficher les logs de notre stack.
 ```bash
 $> docker-compose stop
 ```
-- Permet d'arreter l'ensemble des service de notre stack.
+> Permet d'arreter l'ensemble des service de notre stack.
 ```bash
 $> docker-compose down
 ```
-- Permet de détruire l'ensemble des ressources d'une stack.
+> Permet de détruire l'ensemble des ressources d'une stack.
 ```bash
 $> docker-compose config
 ```
-- Permet de valider la syntaxe de notre fichier docker-compose.yml
+> Permet de valider la syntaxe de notre fichier docker-compose.yml
  
 </details>
-
-> [!CAUTION]
->Pour des raisons de sécurité évidentes, toutes les informations d'identification, clés API, variables env
-etc... doivent être sauvegardées localement dans un fichier .env et ignorées par git.
->
-> Les informations d'identification stockées publiquement vous conduiront directement à un échec du projet.
 
 # Partie Bonus
 
