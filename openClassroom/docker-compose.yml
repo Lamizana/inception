@@ -1,0 +1,50 @@
+# ----------------------------------------- #
+# CREATION D UN SITE WORDPRESS AVEC UNE DB: #
+# ----------------------------------------- #
+
+# Version que l'on souhaite utiliser:
+version: "3"
+
+# [1] L'ensemble des conteneurs qui doivent etre cree doivent etre definis
+# sous l argument "service".
+# [2] Chaque conteneur commence avec un nom qui lui est propre, ici il s'appelle db.
+# [3] image permet de definir l'image Docker que nous souhaitons utiliser>
+# [4] Definir le volume pour la persistance des donnees.
+# [5] Definir la politique de demarrage du conteneur
+# [6] Definir les variables d'environnement.
+# [7] Decrire le second service: Wordpress.
+#   - depend_on: permet de creer une dependance entre 2 conteneur.
+#   - port: permet de rendre le conteneur accesible depuis l'exterieur.
+# LANCEMENT: docker-compose up -d
+#            ouvrir "http://127.0.0.1.8000"
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    expose:
+      - 3306
+      - 33060
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDBRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+
+volumes:
+  db_data: {}
