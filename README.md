@@ -262,6 +262,10 @@ $> docker-compose logs -f --tail 5
 ```
 > Permet d'afficher les logs de notre stack.
 ```bash
+$> docker-compose images
+```
+> Permet d'afficher toutes les images ainsi que leur ID.
+```bash
 $> docker-compose stop
 ```
 > Permet d'arreter l'ensemble des service de notre stack.
