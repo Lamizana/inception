@@ -232,6 +232,10 @@ $> docker pull hello-world
 $> docker system prune
 ```
 > Supprime l'ensemble des ressources.
+> ```bash
+$> docker container prune
+```
+> Supprime l'ensemble des conteneur
 ```bash
 $> docker images -a
 ```
