@@ -124,6 +124,8 @@ web de wil.
 > uniquement, en utilisant le protocole TLSv1.2 ou TLSv1.3.
 
 ### Exemple de la structure de répertoire attendue :
+<details>
+    
 ```bash
 $> ls -alR
 total XX
@@ -177,8 +179,11 @@ MYSQL_PASSWORD=XXXXXXXXXXXX
 [...]
 $>
 ```
+</details>
 
 ### Commandes Docker:
+<details>
+
 ```bash
 $> docker run XXX
 ```
@@ -227,7 +232,9 @@ $> docker images -a
 $> docker rmi ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
 - Supprime l'image du disque.
-  
+    
+</details>
+    
 > [!CAUTION]
 >Pour des raisons de sécurité évidentes, toutes les informations d'identification, clés API, variables env
 etc... doivent être sauvegardées localement dans un fichier .env et ignorées par git.
