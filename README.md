@@ -276,6 +276,39 @@ $> docker-compose config
  
 </details>
 
+### Fichier Docker-compose.yml:
+<details>
+
+```docker-compose.yml
+image: 
+```
+> Permet de spécifier l'***image source*** pour le conteneur.
+```docker-compose.yml
+build: 
+```
+> Permet de spécifier le ***Dockerfile source*** pour le conteneur.
+```docker-compose.yml
+volume:
+```
+> Permet de spécifier les ***points de montages*** entre le systéme hote et les conteneurs. 
+```docker-compose.yml
+restart:
+```
+> Permet de définir le comportement du conteneur ***en cas d'arret*** du processus.
+```docker-compose.yml
+environment:
+```
+> Permet de définir les ***variables d'environnement***.
+```docker-compose.yml
+depends_on:
+```
+> Permet de dire que le conteneur ***dépend*** d'un autre conteneur.
+```docker-compose.yml
+portd:
+```
+> Permet de définir Les ***ports disponibles*** entre la machine hote et le conteneur.
+</details>
+
 # Partie Bonus
 
 - Un fichier Dockerfile doit être écrit pour chaque service supplémentaire.
