@@ -234,7 +234,37 @@ $> docker rmi ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 - Supprime l'image du disque.
     
 </details>
-    
+
+### Commandes Docker-compose:
+<details>
+
+```bash
+$> docker-compose up -d
+```
+- Démarre l'ensemble des contenaurs en arriere-plan.
+```bash
+$> docker-compose ps
+```
+- Permet d'afficher le status de l'ensemble de notre stack.
+```bash
+$> docker-compose logs -f --tail 5
+```
+- Permet d'afficher les logs de notre stack.
+```bash
+$> docker-compose stop
+```
+- Permet d'arreter l'ensemble des service de notre stack.
+```bash
+$> docker-compose down
+```
+- Permet de détruire l'ensemble des ressources d'une stack.
+```bash
+$> docker-compose config
+```
+- Permet de valider la syntaxe de notre fichier docker-compose.yml
+ 
+</details>
+
 > [!CAUTION]
 >Pour des raisons de sécurité évidentes, toutes les informations d'identification, clés API, variables env
 etc... doivent être sauvegardées localement dans un fichier .env et ignorées par git.
