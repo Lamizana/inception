@@ -229,7 +229,7 @@ $> docker pull hello-world
 ```
 > recupere l'image, la met sur le disque mais ne la lance pas.
 ```bash
-$> docker prune
+$> docker system prune
 ```
 > Supprime l'ensemble des ressources.
 ```bash
