@@ -304,7 +304,7 @@ depends_on:
 ```
 > Permet de dire que le conteneur ***dépend*** d'un autre conteneur.
 ```docker-compose.yml
-portd:
+ports:
 ```
 > Permet de définir Les ***ports disponibles*** entre la machine hote et le conteneur.
 </details>
