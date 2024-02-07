@@ -14,3 +14,4 @@ RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www \
 
 RUN chown -R root:root /var/www/wordpress
 
+COPY conf/php.ini /var/www/wordpress
