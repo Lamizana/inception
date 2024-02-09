@@ -215,7 +215,7 @@ $> docker ps -a
 ```bash
 $> docker exec -ti ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
-> Inspect un docker:
+> Affiche des informations sur les objets Docker tels que les images, les conteneurs, les volumes..
 ```bash
 $> docker inspect <name>
 ```
