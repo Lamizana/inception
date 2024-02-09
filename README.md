@@ -225,6 +225,10 @@ $> docker inspect <name>
 ```
 > Affiche des informations sur les objets Docker tels que les images, les conteneurs, les volumes..
 ```bash
+$> docker rm <name>
+```
+> Supprime le conteneur du system.
+```bash
 $> docker stop ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
 > Stoppe le conteneur mais reste sur le disque.
