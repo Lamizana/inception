@@ -213,13 +213,13 @@ $> docker ps -a
 ```
 > Liste tout les conteneurs.
 ```bash
-$> docker exec -ti ID_RETOURNÉ_LORS_DU_DOCKER_RUN
+$> docker exec -it ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
-> Affiche des informations sur les objets Docker tels que les images, les conteneurs, les volumes..
+> Ouvre un shell pour acceder dans le conteneur.
 ```bash
 $> docker inspect <name>
 ```
-> Ouvre un shell pour acceder dans le conteneur.
+> Affiche des informations sur les objets Docker tels que les images, les conteneurs, les volumes..
 ```bash
 $> docker stop ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
