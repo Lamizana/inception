@@ -189,7 +189,7 @@ etc... doivent être sauvegardées localement dans un fichier .env et ignorées 
 
 # Notion et commandes:
 
-### Commandes Docker:
+### Commandes container Docker:
 <details>
 
 ```bash
@@ -240,10 +240,16 @@ $> docker pull hello-world
 $> docker system prune
 ```
 > Supprime l'ensemble des ressources.
-> ```bash
+```bash
 $> docker container prune
 ```
 > Supprime l'ensemble des conteneur
+    
+</details>
+
+### Commandes images Docker:
+<details>
+    
 ```bash
 $> docker images -a
 ```
@@ -252,8 +258,8 @@ $> docker images -a
 $> docker rmi ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
 > Supprime l'image du disque.
-    
-</details>
+
+</details>  
 
 ### Commandes Docker-compose:
 <details>
