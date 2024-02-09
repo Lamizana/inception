@@ -205,6 +205,10 @@ $> docker run -d -p 8080:80 nginx
 ```
 > Lance un serveur Nginx.
 ```bash
+$> docker run --name mycont -d -it image /bin/sh
+```
+>Crée et démarre un conteneur nommé mycont à partir d'une image avec un shshell comme processus principal.
+```bash
 $> docker ps
 ```
 > liste les conteneurs demarrées.
