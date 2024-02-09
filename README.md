@@ -215,6 +215,10 @@ $> docker ps -a
 ```bash
 $> docker exec -ti ID_RETOURNÉ_LORS_DU_DOCKER_RUN
 ```
+> Inspect un docker:
+```bash
+$> docker inspect <name>
+```
 > Ouvre un shell pour acceder dans le conteneur.
 ```bash
 $> docker stop ID_RETOURNÉ_LORS_DU_DOCKER_RUN
