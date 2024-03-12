@@ -1,4 +1,8 @@
-FROM debian:bookworm
+###########################################################
+# Fichier de configuration globale de mariadb:
+###########################################################
+
+FROM debian:bullseye
 
 RUN apt-get update -y \
 && apt-get upgrade -y \

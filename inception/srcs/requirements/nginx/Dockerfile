@@ -4,10 +4,10 @@
 ###########################################################
 
 # Définir l'image de base sur l'avant derniere version de Debian:
-FROM debian:bookworm
+FROM debian:bullseye
 
 # Mettre a jour le referentiel:
-RUN apt update -y
+RUN apt update -y 
 RUN apt upgrade -y
 
 # Installez les outils necessaires:
@@ -21,6 +21,7 @@ RUN apt install nginx -y
 RUN rm -v /etc/nginx/nginx.conf 
 ADD conf/nginx.conf /etc/nginx/
 
+# Permet l'acces au protocole SSL/TLS:
 RUN mkdir -p /etc/nginx/ssl 
 RUN apt install openssl
 
@@ -34,9 +35,7 @@ RUN chown -R www-data:www-data /var/www/html
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # Expose les ports 
-# EXPOSE 80
 EXPOSE 443
-
 
 # Définit la commande par défaut à exécuter: 
 # CMD [ "nginx", "-g", "daemon off;" ]

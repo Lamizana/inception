@@ -193,10 +193,6 @@ etc... doivent être sauvegardées localement dans un fichier .env et ignorées 
 <details>
 
 ```bash
-$> docker build -t <name> .
-```
-> Creer l'image avec un nom.
-```bash
 $> docker run XXX
 ```
 > Télécharge l'image si elle n`est pas présente et démarre le conteneur.
