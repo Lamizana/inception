@@ -7,12 +7,12 @@
 FROM debian:bullseye
 
 # Mettre a jour le referentiel:
-RUN apt update -y 
-RUN apt upgrade -y
+RUN apt update -y \
+&& apt upgrade -y
 
 # Installez les outils necessaires:
-RUN apt install vim -y 
-RUN apt install curl -y
+RUN apt install vim -y \
+&& apt install curl -y
 
 # Mettre a jour le referentiel:
 RUN apt install nginx -y
